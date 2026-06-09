@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>下載專區詳細內頁 | 桃園市住宅及都市更新中心</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Palanquin+Dark:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    :root {
+      --primary: #ff5718;
+      --green-dark: #467063;
+      --paper: #fdf6f3;
+      --gray-100: #f7f7f7;
+      --gray-300: #d8d8d8;
+      --text: #222;
+      --muted: #6b7280;
+      --word: #2b579a;
+    }
+
+    body {
+      background: #fff;
+      color: var(--text);
+      font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .page-download-detail {
+      padding: 40px 0 72px;
+    }
+
+    .breadcrumb-nav {
+      margin-bottom: 28px;
+    }
+
+    .breadcrumb {
+      --bs-breadcrumb-divider-color: var(--muted);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb .active {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .page-title-wrap {
+      align-items: end;
+      border-bottom: 1px solid var(--gray-300);
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+    }
+
+    .page-eyebrow {
+      color: var(--green-dark);
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .page-title {
+      color: #000;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .page-summary {
+      color: var(--muted);
+      font-size: 1rem;
+      margin: 12px 0 0;
+      max-width: 48rem;
+    }
+
+    .page-meta {
+      align-items: center;
+      background: var(--gray-100);
+      display: inline-flex;
+      flex-shrink: 0;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 16px;
+    }
+
+    .download-content {
+      display: grid;
+      gap: 36px;
+      max-width: 980px;
+    }
+
+    .section-title {
+      align-items: center;
+      color: #000;
+      display: flex;
+      font-size: 1.5rem;
+      font-weight: 500;
+      gap: 10px;
+      line-height: 1.4;
+      margin: 0 0 20px;
+    }
+
+    .section-title::before {
+      background: var(--primary);
+      content: "";
+      display: block;
+      height: 1.25em;
+      width: 4px;
+    }
+
+    .download-groups {
+      display: grid;
+      gap: 32px;
+    }
+
+    .download-group {
+      border-bottom: 1px solid var(--gray-300);
+      padding-bottom: 32px;
+    }
+
+    .download-group:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .group-header {
+      align-items: center;
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .group-title {
+      color: #000;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .tag {
+      align-items: center;
+      background: #ffeed6;
+      color: var(--primary);
+      display: inline-flex;
+      font-size: .875rem;
+      font-weight: 500;
+      min-height: 32px;
+      padding: 4px 12px;
+      white-space: nowrap;
+    }
+
+    .group-description {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .document-list {
+      border-top: 1px solid var(--gray-300);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .document-item {
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    .document-link {
+      align-items: center;
+      color: var(--text);
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 32px minmax(0, 1fr) auto;
+      min-height: 72px;
+      padding: 14px 0;
+      text-decoration: none;
+    }
+
+    .document-link:focus,
+    .document-link:hover {
+      color: var(--primary);
+    }
+
+    .document-link:focus {
+      outline: 2px dashed #e51313;
+      outline-offset: 4px;
+    }
+
+    .word-icon {
+      align-items: center;
+      color: var(--word);
+      display: inline-flex;
+      font-size: 1.5rem;
+      justify-content: center;
+    }
+
+    .document-title {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .document-meta {
+      color: var(--muted);
+      display: block;
+      font-size: .9375rem;
+      margin-top: 2px;
+    }
+
+    .document-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .badge-soft {
+      background: var(--gray-100);
+      color: var(--muted);
+      display: inline-flex;
+      font-size: .8125rem;
+      min-height: 26px;
+      padding: 3px 8px;
+    }
+
+    .download-action {
+      align-items: center;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      display: inline-flex;
+      font-size: .9375rem;
+      gap: 6px;
+      min-height: 40px;
+      padding: 8px 12px;
+      white-space: nowrap;
+    }
+
+    .document-link:hover .download-action,
+    .document-link:focus .download-action {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .notice-panel {
+      background: var(--paper);
+      padding: 24px;
+    }
+
+    .notice-panel h2 {
+      color: #000;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    .notice-panel ul {
+      color: var(--text);
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .notice-panel li + li {
+      margin-top: 6px;
+    }
+
+    .btn-return {
+      align-items: center;
+      color: var(--primary);
+      display: inline-flex;
+      font-weight: 500;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-title-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .group-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .document-link {
+        gap: 10px 12px;
+        grid-template-columns: 28px minmax(0, 1fr);
+        padding: 16px 0;
+      }
+
+      .download-action {
+        grid-column: 2;
+        justify-content: center;
+        width: fit-content;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-download-detail">
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="麵包屑">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
+          <li class="breadcrumb-item"><a href="./download.html">下載專區</a></li>
+          <li class="breadcrumb-item active" aria-current="page">申購文件下載</li>
+        </ol>
+      </nav>
+
+      <header class="page-title-wrap">
+        <div>
+          <div class="page-eyebrow">可負擔住宅申購文件</div>
+          <h1 class="page-title">申購文件下載</h1>
+          <p class="page-summary">本頁依通知時間與作業階段整理目前可下載的 Word 文件。若某階段暫無文件，前台不顯示該分類，避免使用者誤以為需要辦理額外作業。</p>
+        </div>
+        <div class="page-meta" aria-label="文件更新日期">
+          <span class="material-symbols-rounded" aria-hidden="true">event</span>
+          <span>更新日期：115/06/01</span>
+        </div>
+      </header>
+
+      <section class="download-content" aria-labelledby="documentTitle">
+        <h2 class="section-title" id="documentTitle">文件下載</h2>
+        <div class="download-groups">
+          <article class="download-group" id="group-house">
+            <div class="group-header">
+              <h3 class="group-title">看選屋階段</h3>
+              <span class="tag">需填寫後繳回</span>
+            </div>
+            <p class="group-description">適用於看選屋通知後，申請人填寫志願、確認選屋規範與現場報到使用。</p>
+            <ul class="document-list">
+              <li class="document-item">
+                <a class="document-link" href="./files/選屋意願單-115.3.25.docx" download>
+                  <span class="word-icon"><i class="fa-solid fa-file-word" aria-hidden="true"></i></span>
+                  <span>
+                    <span class="document-title">選屋意願單-115.3.25.docx</span>
+                    <span class="document-meta">文件日期：115/03/25</span>
+                    <span class="document-badges">
+                      <span class="badge-soft">看選屋</span>
+                      <span class="badge-soft">目前版本</span>
+                    </span>
+                  </span>
+                  <span class="download-action">
+                    <span class="material-symbols-rounded fs-6" aria-hidden="true">download</span>
+                    下載
+                  </span>
+                </a>
+              </li>
+              <li class="document-item">
+                <a class="document-link" href="./files/看選屋規定-115.6.1.docx" download>
+                  <span class="word-icon"><i class="fa-solid fa-file-word" aria-hidden="true"></i></span>
+                  <span>
+                    <span class="document-title">看選屋規定-115.6.1.docx</span>
+                    <span class="document-meta">文件日期：115/06/01</span>
+                    <span class="document-badges">
+                      <span class="badge-soft">看選屋</span>
+                      <span class="badge-soft">目前版本</span>
+                    </span>
+                  </span>
+                  <span class="download-action">
+                    <span class="material-symbols-rounded fs-6" aria-hidden="true">download</span>
+                    下載
+                  </span>
+                </a>
+              </li>
+              <li class="document-item">
+                <a class="document-link" href="./files/看選屋規定-115.2.05.docx" download>
+                  <span class="word-icon"><i class="fa-solid fa-file-word" aria-hidden="true"></i></span>
+                  <span>
+                    <span class="document-title">看選屋規定-115.2.05.docx</span>
+                    <span class="document-meta">文件日期：115/02/05</span>
+                    <span class="document-badges">
+                      <span class="badge-soft">看選屋</span>
+                      <span class="badge-soft">歷史版本</span>
+                    </span>
+                  </span>
+                  <span class="download-action">
+                    <span class="material-symbols-rounded fs-6" aria-hidden="true">download</span>
+                    下載
+                  </span>
+                </a>
+              </li>
+              <li class="document-item">
+                <a class="document-link" href="./files/看選屋志願表-115.1.29.docx" download>
+                  <span class="word-icon"><i class="fa-solid fa-file-word" aria-hidden="true"></i></span>
+                  <span>
+                    <span class="document-title">看選屋志願表-115.1.29.docx</span>
+                    <span class="document-meta">文件日期：115/01/29</span>
+                    <span class="document-badges">
+                      <span class="badge-soft">看選屋</span>
+                      <span class="badge-soft">歷史版本</span>
+                    </span>
+                  </span>
+                  <span class="download-action">
+                    <span class="material-symbols-rounded fs-6" aria-hidden="true">download</span>
+                    下載
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="download-group" id="group-loan">
+            <div class="group-header">
+              <h3 class="group-title">貸款申請階段</h3>
+              <span class="tag">銀行申貸</span>
+            </div>
+            <p class="group-description">適用於簽約後辦理銀行申貸與撥貸前準備。</p>
+            <ul class="document-list">
+              <li class="document-item">
+                <a class="document-link" href="./files/銀行申貸通知-115.1.16.docx" download>
+                  <span class="word-icon"><i class="fa-solid fa-file-word" aria-hidden="true"></i></span>
+                  <span>
+                    <span class="document-title">銀行申貸通知-115.1.16.docx</span>
+                    <span class="document-meta">文件日期：115/01/16</span>
+                    <span class="document-badges">
+                      <span class="badge-soft">貸款申請</span>
+                      <span class="badge-soft">目前版本</span>
+                    </span>
+                  </span>
+                  <span class="download-action">
+                    <span class="material-symbols-rounded fs-6" aria-hidden="true">download</span>
+                    下載
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <section class="notice-panel" aria-labelledby="noticeTitle">
+          <h2 id="noticeTitle">下載與填寫提醒</h2>
+          <ul>
+            <li>請依通知階段下載對應文件，未顯示的階段代表目前無需下載文件。</li>
+            <li>文件若有新版，前台可保留歷史版本或由後台設定為不顯示。</li>
+            <li>需繳回的 Word 文件建議完成填寫後另存 PDF，再依通知方式上傳或現場繳交。</li>
+          </ul>
+        </section>
+
+        <a class="btn-return" href="./download.html">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          返回下載專區
+        </a>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
